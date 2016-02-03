@@ -1,0 +1,16 @@
+Package name:     xbattle
+Version number:   5.4.1
+Original author:  Greg Lesher <lesher@cns.bu.edu>
+Original URL:     http://cns-web.bu.edu/pub/xpip/html/xbattle.html
+HP-UX URL:        http://hpux.connect.org.uk/hppd/cgi-bin/search?package=&term=xbattle-
+Install tree:     /opt/xbattle
+Report bugs to:   neil@connect.org.uk
+Tested on:        HP 9000/780/C160 running HP-UX 11.00
+C compiler used:  Version A.11.01.02
+Purpose:
+Multi-user battle strategy game for X windows. This is played on a variable
+sized grid between multiple players on different displays. The idea is to take
+over the playing area with your colour by moving your armies and fighting the
+opponent. Comes with two tutorials to teach the basics of the game.
+Date archived:    Wed 10 Nov 1999
+Special notes:    See HPUX.Install as usual.

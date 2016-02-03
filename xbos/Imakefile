@@ -1,0 +1,14 @@
+InstallNonExecFile(atlas.xbo,$(LIBDIR))
+InstallNonExecFile(default.xbo,$(LIBDIR))
+InstallNonExecFile(demo.xbo,$(LIBDIR))
+InstallNonExecFile(desert.xbo,$(LIBDIR))
+InstallNonExecFile(io.xbo,$(LIBDIR))
+InstallNonExecFile(skirmish.xbo,$(LIBDIR))
+InstallNonExecFile(space.xbo,$(LIBDIR))
+InstallNonExecFile(tribal.xbo,$(LIBDIR))
+InstallNonExecFile(tropical.xbo,$(LIBDIR))
+InstallNonExecFile(tropical2.xbo,$(LIBDIR))
+InstallNonExecFile(tundra.xbo,$(LIBDIR))
+
+all::
+	true

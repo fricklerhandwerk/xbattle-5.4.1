@@ -1,0 +1,5 @@
+InstallNonExecFile(castle.xbt,$(LIBDIR))
+InstallNonExecFile(natural.xbt,$(LIBDIR))
+
+all::
+	true

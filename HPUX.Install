@@ -1,0 +1,18 @@
+Changes:
+   Added Imakefiles to the xbos and xbts subdirectories so that
+   the option files (.xbo) and battle files (.xbt) are installed
+   along with the game.
+
+   Modified the top-level Imakefile to set DEFINES to use the
+   option and battle files.
+
+
+To build:
+   xmkmf
+   make Makefiles
+   make
+
+
+To install:
+   make install
+   make install.man

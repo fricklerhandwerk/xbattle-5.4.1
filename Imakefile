@@ -1,0 +1,60 @@
+# @(#)Imakefile 10/1/91
+# Imakefile - xbattle
+
+#ifdef MipsArchitecture
+#if !HasGcc
+CCOPTIONS = -Wf,-XNl4096
+#endif
+#endif
+
+#define IHaveSubdirs
+#define PassCDebugFlags
+
+SUBDIRS = xbos xbts
+
+MakeSubdirs($(SUBDIRS))
+
+        DEFINES = -DDEFAULT_XBO_DIR=\"$(LIBDIR)\" \
+                  -DDEFAULT_XBT_DIR=\"$(LIBDIR)\" \
+                  -DDEFAULT_XBA_DIR=\"/tmp\"
+LOCAL_LIBRARIES = $(XLIB)
+  SYS_LIBRARIES = -lm
+           SRCS =	command.c		\
+			draw.c			\
+			edit.c			\
+			error.c			\
+			init.c			\
+			load.c			\
+			main.c			\
+			parse.c			\
+			replay.c		\
+			shape.c			\
+			shape_diamond.c		\
+			shape_hex.c		\
+			shape_octagon.c		\
+			shape_square.c		\
+			shape_triangle.c	\
+			update.c		\
+			utils.c			\
+			window.c
+           OBJS =	command.o		\
+			draw.o			\
+			edit.o			\
+			error.o			\
+			init.o			\
+			load.o			\
+			main.o			\
+			parse.o			\
+			replay.o		\
+			shape.o			\
+			shape_diamond.o		\
+			shape_hex.o		\
+			shape_octagon.o		\
+			shape_square.o		\
+			shape_triangle.o	\
+			update.o		\
+			utils.o			\
+			window.o
+
+ComplexProgramTarget(xbattle)
+

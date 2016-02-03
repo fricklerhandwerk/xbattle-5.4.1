@@ -1,0 +1,89 @@
+CC			= cc
+#OPTFLAGS		= -O
+DEBUGFLAGS		= -g
+
+# If using Openwindows, probably will need to uncomment one of these
+#
+#INCLUDES		= -I$(OPENWINHOME)/include
+#INCLUDES		= -I$(OPENWINHOME)/share/include
+
+DEFINES			= -DDEFAULT_XBO_DIR=\"/export/home/lesher/xbos\" \
+                  	-DDEFAULT_XBT_DIR=\"/export/home/lesher/xbts\" \
+                  	-DDEFAULT_XBA_DIR=\"/export/home/lesher/xbas\"
+
+CFLAGS			= $(DEFINES) $(INCLUDES) $(OPTFLAGS) $(DEBUGFLAGS)
+LIB			= -lX11 -lm
+
+SRCS = \
+       command.c	\
+       draw.c		\
+       edit.c		\
+       error.c		\
+       init.c		\
+       load.c		\
+       main.c		\
+       parse.c		\
+       replay.c		\
+       shape.c		\
+       shape_diamond.c	\
+       shape_hex.c	\
+       shape_octagon.c	\
+       shape_square.c	\
+       shape_triangle.c	\
+       update.c		\
+       utils.c		\
+       window.c
+
+OBJS = \
+       command.o	\
+       draw.o		\
+       edit.o		\
+       error.o		\
+       init.o		\
+       load.o		\
+       main.o		\
+       parse.o		\
+       replay.o		\
+       shape.o		\
+       shape_diamond.o	\
+       shape_hex.o	\
+       shape_octagon.o	\
+       shape_square.o	\
+       shape_triangle.o	\
+       update.o		\
+       utils.o		\
+       window.o
+
+TARGET = xbattle
+
+#### default target ####
+all:	$(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET) $(LIBS) $(LIB)
+
+depend:	
+	makedepend $(CFLAGS) -o $(OBJS) $(SRCS)
+
+command.o:		extern.h constant.h options2.h
+draw.o:			extern.h constant.h options2.h
+edit.o:			extern.h constant.h options2.h edit.h
+error.o:		extern.h constant.h options2.h
+init.o:			extern.h constant.h options2.h
+load.o:			extern.h constant.h options2.h
+main.o:			extern.h constant.h options2.h global.h
+parse.o:		extern.h constant.h options2.h options.h parse.h
+shape.o:		extern.h constant.h options2.h
+replay.o:		extern.h constant.h options2.h
+shape_diamond.o:	extern.h constant.h options2.h
+shape_hex.o:		extern.h constant.h options2.h
+shape_octagon.o:	extern.h constant.h options2.h
+shape_square.o:		extern.h constant.h options2.h
+shape_triangle.o:	extern.h constant.h options2.h
+update.o:		extern.h constant.h options2.h
+utils.o:		extern.h constant.h options2.h
+window.o:		extern.h constant.h options2.h
+
+clean:
+	-/bin/rm -f *.o $(TARGET) core
+
+realclean:
+	-/bin/rm -f *.o $(TARGET) core xbattle
